@@ -1,37 +1,32 @@
 <?php
 /*
-Plugin Name: Snazzy Slider
-Plugin URI:  https://github.com/joshcummingsdesign/snazzy-slider
-Description: A simple and elegant way to display three featured posts.
+Plugin Name: myplugin
+Plugin URI:  http://example.com
+Description: myplugin description
 Version:     1.0
-Author:      Josh Cummings
-Author URI:  http://joshcummingsdesign.com
+Author:      Your name
+Author URI:  http://example.com
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: snazzy-slider
+Text Domain: myplugin
+Domain Path: /languages
 */
 
 /*****************************************
-* Global variables
+* Installation
 /****************************************/
 
-$myplugin_options = get_option( 'myplugin_settings' ); // Get plugin settings from the options table
+function myplugin_install() {
+
+	$default_options = array();
+
+	update_option( 'myplugin_options', $default_options );
+}
+register_activation_hook( __FILE__, 'myplugin_install' );
 
 /*****************************************
 * Includes
 /****************************************/
 
-include ( 'includes/myplugin-data-processing.php' ); // Controls the saving of data
-include ( 'public/myplugin-public.php' ); // Display content functions for the front end
-include ( 'admin/myplugin-admin.php' ); // The plugin admin page
-
-/*****************************************
-* Enqueue styles and scripts
-/****************************************/
-
-function myplugin_load_scripts() {
-  if ( is_single() ) {
-    wp_enqueue_style( 'myplugin-styles', plugin_dir_url( __FILE__ ) . 'public/css/myplugin-styles.css' );
-  }
-}
-add_action( 'wp_enqueue_scripts', 'myplugin_load_scripts' );
+include ( 'public/myplugin-public.php' );
+include ( 'admin/myplugin-admin.php' );

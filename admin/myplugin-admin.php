@@ -1,30 +1,53 @@
 <?php
 
 /*****************************************
-* Admin Page
+* Add admin menu
 /****************************************/
 
-// Creates the admin menu
 function myplugin_add_admin_menu() {
+
+  $options = get_option( 'myplugin_options' );
+
   add_menu_page(
-    'Snazzy Slider',
-    'Snazzy Slider',
-    'manage_options',
-    'snazzy-slider',
-    'myplugin_display_admin_content'
-    // You can add an icon here
+    $page_title,
+    $menu_title,
+    $capability,
+    $menu_slug,
+    $function,
+    $icon_url,
+    $position
   );
+
 }
 add_action( 'admin_menu', 'myplugin_add_admin_menu' );
 
-// Registers the settings for the options table
-function myplugin_register_settings() {
-  register_setting( 'myplugin_settings_group', 'myplugin_settings' );
-}
-add_action( 'admin_init', 'myplugin_register_settings' );
+/*****************************************
+* Register scripts and styles
+/****************************************/
 
-// Displays the admin menu content
+function myplugin_admin_scripts() {
+
+  wp_register_style( 'myplugin_admin_styles', plugins_url( 'css/myplugin-admin.css', __FILE__ ) );
+
+  wp_register_script( 'myplugin_admin_script', plugins_url( 'js/myplugin-admin-script.js', __FILE__ ), array( 'jquery' ) );
+
+}
+add_action( 'admin_enqueue_scripts', 'myplugin_admin_scripts' );
+
+/*****************************************
+* Data processing
+/****************************************/
+
+include ( 'includes/myplugin-data-processing.php' );
+
+/*****************************************
+* Display admin content
+/****************************************/
+
 function myplugin_display_admin_content() {
-  global $myplugin_options;
-  include ( 'partials/myplugin-admin-display.php' ); // The content for the plugin admin page
+
+  $options = get_option( 'myplugin_options' );
+
+  include ( 'partials/myplugin-admin-content.php' );
+
 }

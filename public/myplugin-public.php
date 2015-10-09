@@ -1,16 +1,32 @@
 <?php
 
 /*****************************************
-* Displays content for the front end
+* Register scripts and styles
 /****************************************/
 
-function myplugin_add_content($content) {
+function myplugin_register_scripts() {
 
-  global $myplugin_options;
+	wp_register_style( 'myplugin_styles', plugin_dir_url( __FILE__ ) . 'css/myplugin-styles.css' );
 
-  if ( is_single() && ! empty( $myplugin_options['enable'] ) ) {
-    $content .= '<p class="twitter-message ' . $myplugin_options['theme'] . '">Follow me on <a href="' . $myplugin_options['twitter_url'] . '">Twitter</a>.</p>';
-  }
-  return $content;
+  wp_register_script( 'myplugin_script', plugin_dir_url( __FILE__ ) . 'js/myplugin-script.js', array( 'jquery' ) );
+
 }
-add_filter( 'the_content', 'myplugin_add_content' );
+add_action( 'wp_enqueue_scripts', 'myplugin_register_scripts' );
+
+/*****************************************
+* Add shortcode
+/****************************************/
+
+function myplugin_display_slider($atts) {
+
+	$atts = shortcode_atts(
+	array(
+		'name' => ''
+	), $atts);
+
+	$options = get_option( 'myplugin_options' );
+
+	include ( 'partials/myplugin-public-content.php' );
+
+}
+add_shortcode( 'myplugin', 'myplugin_display_slider' );
