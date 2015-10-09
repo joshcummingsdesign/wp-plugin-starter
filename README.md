@@ -38,3 +38,5 @@ A starter kit for building WordPress plugins.
 ├── readme.txt
 └── uninstall.php
 ```
+## Resources
+[WordPress Plugin Handbook](https://developer.wordpress.org/plugins/)
