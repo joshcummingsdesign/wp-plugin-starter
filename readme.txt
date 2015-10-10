@@ -41,5 +41,5 @@ Write your answer here.
 
 == Upgrade Notice ==
 
-= 1.1 =
+= 1.0 =
 Thank you for downloading the initial release of My_Plugin!
