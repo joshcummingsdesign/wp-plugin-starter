@@ -37,5 +37,9 @@ Write your answer here.
 == Changelog ==
 
 = 1.0 =
-
 * Initial release
+
+== Upgrade Notice ==
+
+= 1.1 =
+Thank you for downloading the initial release of My_Plugin!
