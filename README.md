@@ -1,4 +1,4 @@
-# WordPress Plugin Starter
+# WordPress Plugin Starter v1.0
 A starter kit for building WordPress plugins.
 
 ## Getting Started
