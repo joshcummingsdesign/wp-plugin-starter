@@ -4,9 +4,12 @@
         <div id="post-body" class="metabox-holder columns-2">
             <div id="post-body-content">
                 <form action="options.php" method="post">
-                    <?php settings_fields($group); ?>
+                    <?php settings_fields($settings_group); ?>
                     <?= $fields ?>
-                    <p><input class="button-primary" type="submit" value="Submit"></p>
+                    <div class="submit-wrap">
+                        <?php submit_button($submit_text); ?>
+                        <div class="spinner"></div>
+                    </div>
                 </form>
             </div>
         </div>

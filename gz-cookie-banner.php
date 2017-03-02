@@ -19,6 +19,7 @@ if (!defined('WPINC')) {
     die;
 }
 
+require plugin_dir_path(__FILE__) . 'includes/class-info.php';
 require plugin_dir_path(__FILE__) . 'includes/class-plugin.php';
 
 function run() {
