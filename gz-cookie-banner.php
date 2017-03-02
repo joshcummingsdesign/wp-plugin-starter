@@ -20,9 +20,20 @@ if (!defined('WPINC')) {
 }
 
 require plugin_dir_path(__FILE__) . 'includes/class-info.php';
-require plugin_dir_path(__FILE__) . 'includes/class-plugin.php';
+
+function activation() {
+    require plugin_dir_path(__FILE__) . 'includes/class-activator.php';
+    Activator::activate();
+}
+register_activation_hook(__FILE__, __NAMESPACE__ . '\\activation');
+
+// And here goes the uninstallation function:
+function your_prefix_uninstall(){
+    //  codes to perform during unistallation
+}
 
 function run() {
+    require plugin_dir_path(__FILE__) . 'includes/class-plugin.php';
     $plugin = new Plugin();
     $plugin->run();
 }

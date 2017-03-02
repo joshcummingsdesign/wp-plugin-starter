@@ -13,8 +13,8 @@ class Plugin {
     public function __construct() {
         $this->plugin_slug = Info::SLUG;
         $this->version     = Info::VERSION;
-        $this->option_name = 'ckbr_settings';
-        $this->update_url  = 'https://update.madebygrizzly.com/wp-update-server/';
+        $this->option_name = Info::OPTION_NAME;
+        $this->update_url  = Info::UPDATE_URL;
         $this->load_dependencies();
         $this->define_admin_hooks();
         $this->define_frontend_hooks();
