@@ -6,7 +6,7 @@
     <file>./</file>
 
     <!-- Exclude these files -->
-    <exclude-pattern>./includes/vendor/</exclude-pattern>
+    <exclude-pattern>*/vendor/</exclude-pattern>
 
     <!-- Show colors in console -->
     <arg value="-colors"/>
