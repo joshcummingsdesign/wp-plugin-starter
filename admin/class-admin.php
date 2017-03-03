@@ -8,7 +8,6 @@ namespace PLUGIN_NAME;
 class Admin
 {
     private $plugin_slug;
-    private $plugin_name;
     private $version;
     private $option_name;
     private $settings;
@@ -16,7 +15,6 @@ class Admin
 
     public function __construct($plugin_slug, $version, $option_name) {
         $this->plugin_slug = $plugin_slug;
-        $this->plugin_name = Info::get_plugin_title();
         $this->version = $version;
         $this->option_name = $option_name;
         $this->settings = get_option($this->option_name);
@@ -60,10 +58,11 @@ class Admin
     }
 
     public function add_menus() {
+        $plugin_name = Info::get_plugin_title();
         add_submenu_page(
             'options-general.php',
-            $this->plugin_name,
-            $this->plugin_name,
+            $plugin_name,
+            $plugin_name,
             'manage_options',
             $this->plugin_slug,
             [$this, 'render']
@@ -95,7 +94,7 @@ class Admin
         // Controller
         $fields = $this->custom_settings_fields($field_args, $settings);
         $settings_group = $this->settings_group;
-        $heading = $this->plugin_name;
+        $heading = Info::get_plugin_title();
         $submit_text = esc_attr__('Submit', 'plugin-name');
 
         // View
