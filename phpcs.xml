@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<ruleset name="Grizzly">
+    <description>Grizzly Coding Standards</description>
+
+    <!-- Scan these files -->
+    <file>./</file>
+
+    <!-- Exclude these files -->
+    <exclude-pattern>./includes/vendor/</exclude-pattern>
+
+    <!-- Show colors in console -->
+    <arg value="-colors"/>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="s"/>
+
+    <!-- Use PSR-2 as a base -->
+    <rule ref="PSR2">
+
+        <!-- Allow opening braces to be on same line -->
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+
+        <!-- Don't require camel case function names -->
+        <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+
+        <!-- Allow long lines -->
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+
+        <!-- Disable newline after opening brace -->
+        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
+
+        <!-- Allow closing braces to be on the same line -->
+        <exclude name="Squiz.WhiteSpace.ScopeClosingBrace"/>
+
+        <!-- Allow PHP closing tags -->
+        <exclude name="PSR2.Files.ClosingTag.NotAllowed"/>
+
+        <!-- Allow multiple PHP statements in the same line -->
+        <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine"/>
+
+        <!-- Allow hooks and filters to be used -->
+        <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+    </rule>
+
+    <!-- Required opening braces to be on same line -->
+    <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+
+    <!-- Allow PHP files without any PHP in them -->
+    <rule ref="Internal.NoCodeFound">
+        <exclude-pattern>*.php</exclude-pattern>
+    </rule>
+
+    <!-- Allow blank lines at start of control structures in PHP -->
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen">
+        <exclude-pattern>*.php</exclude-pattern>
+        <exclude-pattern>*.js</exclude-pattern>
+    </rule>
+
+    <!-- Allow blank lines at end of control structures in PHP -->
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose">
+        <exclude-pattern>*.php</exclude-pattern>
+        <exclude-pattern>*.js</exclude-pattern>
+    </rule>
+
+    <!-- Everything but PHP should have indent level 2 -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <exclude-pattern>*.php</exclude-pattern>
+        <properties>
+            <property name="indent" value="2"/>
+        </properties>
+    </rule>
+
+    <!-- Don't require namespacing in builder or test files -->
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>./wp-content/plugins/grizzly-builder/</exclude-pattern>
+        <exclude-pattern>./tests</exclude-pattern>
+    </rule>
+
+    <!-- Allow inline control strucutres in js files -->
+    <rule ref="Generic.ControlStructures.InlineControlStructure.NotAllowed">
+        <exclude-pattern>*.js</exclude-pattern>
+    </rule>
+
+    <!-- Allow braces on same line in js files -->
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine">
+        <exclude-pattern>*.js</exclude-pattern>
+    </rule>
+</ruleset>

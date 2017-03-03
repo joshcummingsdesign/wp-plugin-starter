@@ -2,11 +2,11 @@
 
 // If uninstall not called from WordPress, then exit.
 if (!defined('WP_UNINSTALL_PLUGIN')) {
-	exit;
+    exit;
 }
 
 // Delete options
-delete_option('ckbr_settings');
+delete_option('plugin_name_settings');
 
 // Delete options in Multisite
-delete_site_option('ckbr_settings');
+delete_site_option('plugin_name_settings');

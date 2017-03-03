@@ -1,8 +1,12 @@
 <?php
 
-namespace CKBR;
+namespace PLUGIN_NAME;
 
-class Plugin {
+/**
+ * The main plugin class.
+ */
+class Plugin
+{
 
     private $loader;
     private $plugin_slug;
@@ -41,6 +45,9 @@ class Plugin {
         $this->loader->add_action('wp_footer', $plugin_frontend, 'render');
     }
 
+    /**
+     * Checks the activation server (uses wp-update-server).
+     */
     private function check_for_updates() {
         $myUpdateChecker = \Puc_v4_Factory::buildUpdateChecker(
             $this->update_url . '?action=get_metadata&slug=' . $this->plugin_slug,
