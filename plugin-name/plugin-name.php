@@ -32,6 +32,18 @@ function activation() {
 register_activation_hook(__FILE__, __NAMESPACE__ . '\\activation');
 
 /**
+ * Check for updates
+ */
+require_once plugin_dir_path(__FILE__) . 'includes/vendor/plugin-update-checker/plugin-update-checker.php';
+$plugin_slug = Info::SLUG;
+$update_url  = Info::UPDATE_URL;
+$myUpdateChecker = \Puc_v4_Factory::buildUpdateChecker(
+    $update_url . '?action=get_metadata&slug=' . $plugin_slug,
+    __FILE__,
+    $plugin_slug
+);
+
+/**
  * Run the plugin.
  */
 function run() {
