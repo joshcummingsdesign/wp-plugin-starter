@@ -25,6 +25,7 @@ If you did not use the generator, change the following generic info:
   * `./plugin-name`
   * `plugin-name.php`
   * `class-info.php` - `SLUG`, `VERSION`, `OPTION_NAME`, `UPDATE_URL`
+  * Make sure the `UPDATE_URL` has a trailing slash at the end
   * `frontend/class-frontend.php` - assets method
   * `fronend/js/plugin-name-frontend.js`
   * `fronend/css/plugin-name-frontend.css`
