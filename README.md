@@ -33,3 +33,4 @@ If you did not use the generator, change the following generic info:
   * `admin/class-admin.php` - text domain
   * `admin/js/plugin-name-admin.js`
   * `admin/css/plugin-name-admin.css`
+  * `uninstall.php` - option names
