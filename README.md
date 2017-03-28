@@ -16,7 +16,7 @@ An opinionated fork of the [WordPress Plugin Boilerplate](https://github.com/Dev
 
 5. Users will have the ability to create their own template in a folder called `partials/plugin-name.php` in their theme. All the variables you declare in the controller will be accessible to them.
 
-6. Let's talk ajax for a moment. To use ajax in the admin, for example, create an `includes` folder and add a file called `class-admin-ajax.php` and use the `wp_ajax_` hook to process the data.
+6. Let's talk ajax for a moment. To use ajax in the admin, for example, create an `includes` folder and add a file called `class-admin-ajax.php` and use the `wp_ajax_` hook to process the data ([example](https://github.com/joshcummingsdesign/wp-plugin-starter/issues/17)).
 
 ## Without Generator
 
