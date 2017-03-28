@@ -6,17 +6,17 @@ An opinionated fork of the [WordPress Plugin Boilerplate](https://github.com/Dev
 
 ## Getting Started
 
-1. Use the [WP Plugin Generator](https://plugin.madebygrizzly.com)
+* Use the [WP Plugin Generator](https://plugin.madebygrizzly.com)
 
-2. Create settings fields by adding to the array in the render method in `admin/class-admin.php`.
+* Create settings fields by adding to the array in the render method in `admin/class-admin.php`.
 
-3. Get the data from your settings fields in the render method in `frontend/class-frontend.php` where it says controller.
+* Get the data from your settings fields in the render method in `frontend/class-frontend.php` where it says controller.
 
-4. Use that data in your default template found in `frontend/partials/view.php`.
+* Use that data in your default template found in `frontend/partials/view.php`.
 
-5. Users will have the ability to create their own template in a folder called `partials/plugin-name.php` in their theme. All the variables you declare in the controller will be accessible to them.
+* Users will have the ability to create their own template in a folder called `partials/plugin-name.php` in their theme. All the variables you declare in the controller will be accessible to them.
 
-6. [Here is an example of how to make an AJAX call in the admin.](https://github.com/joshcummingsdesign/wp-plugin-starter/issues/17)
+* [Here is an example of how to make an AJAX call in the admin.](https://github.com/joshcummingsdesign/wp-plugin-starter/issues/17)
 
 ## Without Generator
 
