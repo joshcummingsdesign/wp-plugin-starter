@@ -6,7 +6,7 @@ An opinionated fork of the [WordPress Plugin Boilerplate](https://github.com/Dev
 
 ## Getting Started
 
-1. Use the [WP Plugin Generator](https://plugin.madebygrizzly.com)
+1. Use the [WP Plugin Generator](https://plugin.joshcummingsdesign.com)
 
 2. Create settings fields by adding to the array in the render method in `admin/class-admin.php`.
 
