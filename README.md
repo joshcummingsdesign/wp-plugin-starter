@@ -6,7 +6,7 @@ An opinionated fork of the [WordPress Plugin Boilerplate](https://github.com/Dev
 
 ## Getting Started
 
-1. Use the [WP Plugin Generator](https://joshcummingsdesign.com/plugin-generator)
+* Update the plugin info as seen below.
 
 * Create settings fields by adding to the array in the render method in `admin/class-admin.php`.
 
@@ -18,9 +18,10 @@ An opinionated fork of the [WordPress Plugin Boilerplate](https://github.com/Dev
 
 * [Here is an example of how to make an AJAX call in the admin.](https://github.com/joshcummingsdesign/wp-plugin-starter/issues/17)
 
-## Without Generator
+## Update the Plugin Info
 
-If you did not use the generator, change the following generic info:
+Change the following generic plugin info:
+
   * Namespaces in all PHP files - `namespace PLUGIN_NAME;`
   * `./plugin-name`
   * `plugin-name.php`
